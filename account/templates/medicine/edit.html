@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-sm container-md container-lg container-fluid p-3">
+   <div class="row">
+      <div class="tabular">
+         <div class="table-responsive-sm ml-1">
+            <table class="table table-md table-bordered table-striped table-hover">
+               <thead>Medicine Dose Tracker</thead>
+               <tr class="table-primary">
+                  <th scope="row-cols-auto">#</th>
+                  <td scope="row">Medicine Name</td>
+                  <td scope="row">Medicine Dose Type</td>
+                  <td scope="row">Medicine Frequency</td>
+                  <td scope="row" colspan="4">Actions</td>
+               </tr>
+               {% for m in meds%}
+               <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td>{{m.tracked_medicine}}</td>
+                  <td>{{m.dosage}}</td>
+                  <td>{{m.frequency}}</td>
+               </tr>                      
+               {% endfor %}
+               
+            </table>
+         </div>
+      </div>
+
+   </div>
+</div>
+
+{% endblock%}

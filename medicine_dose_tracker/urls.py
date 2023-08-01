@@ -19,9 +19,9 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    # path('', include('account.urls')),
+    path('', include('account.urls')),
     # path('accounts/', include('allauth.urls')),
-    path('meddosage/',include('medicine_dose_tracker_app.urls')),
+    path('med/',include('medicine_dose_tracker_app.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),      
     

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-sm container-md container-lg container-fluid p-3">
+   <div class="row">
+      <div class="tabular">
+         <div class="table-responsive-sm ml-1">
+            <table class="table table-md table-bordered table-striped table-hover">
+               <thead>Medicine Dose Tracker</thead>
+               <tr class="table-primary">
+                  <th scope="row-cols-auto">#</th>
+                  <td scope="row">Medicine Name</td>
+                  <td scope="row">Medicine Dose Type</td>
+                  <td scope="row">Medicine Frequency</td>
+                  <td scope="row" colspan="4">Actions</td>
+               </tr>
+               {% for m in medicines %}
+               <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td>{{m.tracked_medicine}}</td>
+                  <td>{{m.dosage}}</td>
+                  <td>{{m.frequency}}</td>
+                  <td><a href="{% url 'edit' m.id %}" class="btn btn-primary btn-sm" style="color:#fff;" aria-hidden="true">View</a>
+                  <td><a href="{% url 'update_dose' m.id %}" class="btn btn-success btn-sm" style="color:#fff" aria-hidden="true">Edit</a>
+                  <td><a href="{% url 'delete_dose' m.id %}" class="btn btn-danger btn-sm" style="color:#fff" aria-hidden="true">Delete</a>
+                 
+               </tr>
+                      
+               {% endfor %}
+               
+            </table>
+         </div>
+      </div>
+   </div>
+   <p class="text-center p-1"> {% include 'partials/paginator.html' %} </p>
+</div>
+
+{% endblock%}
