@@ -37,7 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'medicine_dose_tracker_app'
+    'medicine_dose_tracker_app',
+    'account',
+    # 'crispy_forms',
+    # 'crispy_bootstrap5',
+    
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    
+    # ... include the providers you want to enable:
+    # 'allauth.socialaccount.providers.google',
+    
 ]
 
 MIDDLEWARE = [
